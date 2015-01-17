@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-import glob
+import glob, sys
 import commands, os
 
-exp_num = "exp1"
+exp_name = sys.argv[1]
 
 hostlist = []
 
@@ -17,7 +17,7 @@ f.close()
 for hostNum in range(1, 11):
 	for i in range(0, hostNum*10):
 		host = hostlist[i]
-		dir_name = exp_num + "/" + str(hostNum*10) + "hosts"
+		dir_name = exp_name + "/" + str(hostNum*10) + "hosts"
 
 		if not os.path.exists(dir_name):
 			os.makedirs(dir_name)
